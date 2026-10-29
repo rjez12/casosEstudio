@@ -63,9 +63,9 @@ Estos estados describen la aplicación y son distintos de `Thread.State`.
 
 ## Organización del código
 
-- `service/ProcesadorPedidos.java`: tarea de procesamiento y cancelación cooperativa.
-- `controller/PedidosController.java`: controles, seguimiento, inicio, cancelación y coordinación del cierre.
-- `PedidosApplication.java`: carga del FXML y gestión del cierre de la ventana.
+- `service/ProcesarPedidos.java`: tarea de procesamiento y cancelación cooperativa.
+- `controller/PedidoController.java`: controles, seguimiento, inicio, cancelación y coordinación del cierre.
+- `PedidoApplication.java`: carga del FXML y gestión del cierre de la ventana.
 - `resources/com/desarrollo/caso2/pedidos-view.fxml`: interfaz.
 - `docs/informe.md`: explicación y resultados.
 - `docs/registro.md`: aportes del equipo.
