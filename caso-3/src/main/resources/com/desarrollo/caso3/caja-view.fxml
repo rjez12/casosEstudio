@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.desarrollo.caso3.controller.CajaController"
+      prefWidth="960"
+      prefHeight="780"
+      spacing="14"
+      style="-fx-background-color: #f1f5f9; -fx-font-family: 'Segoe UI'; -fx-font-size: 14px;">
+
+    <padding>
+        <Insets top="22" right="24" bottom="22" left="24"/>
+    </padding>
+
+    <VBox spacing="4">
+        <Label text="Caja de ventas concurrente"
+               style="-fx-font-size: 27px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+
+        <Label text="3 vendedores · 5 ventas por vendedor · C$100 por venta"
+               style="-fx-text-fill: #64748b;"/>
+    </VBox>
+
+    <HBox spacing="14">
+        <VBox spacing="6"
+              HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 10;">
+
+            <padding>
+                <Insets top="14" right="18" bottom="14" left="18"/>
+            </padding>
+
+            <Label text="Ventas confirmadas"/>
+
+            <Label fx:id="totalVentas"
+                   text="0 / 15"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+        </VBox>
+
+        <VBox spacing="6"
+              HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 10;">
+
+            <padding>
+                <Insets top="14" right="18" bottom="14" left="18"/>
+            </padding>
+
+            <Label text="Recaudación"/>
+
+            <Label fx:id="recaudacion"
+                   text="C$0"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #15803d;"/>
+        </VBox>
+    </HBox>
+
+    <GridPane hgap="16" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+            <ColumnConstraints minWidth="45"/>
+        </columnConstraints>
+
+        <Label text="Vendedor 1"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <ProgressBar fx:id="progreso1"
+                     progress="0"
+                     maxWidth="Infinity"
+                     GridPane.rowIndex="0"
+                     GridPane.columnIndex="1"/>
+
+        <Label fx:id="avance1"
+               text="0 / 5"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="2"/>
+
+        <Label text="Vendedor 2"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <ProgressBar fx:id="progreso2"
+                     progress="0"
+                     maxWidth="Infinity"
+                     GridPane.rowIndex="1"
+                     GridPane.columnIndex="1"/>
+
+        <Label fx:id="avance2"
+               text="0 / 5"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="2"/>
+
+        <Label text="Vendedor 3"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="0"/>
+
+        <ProgressBar fx:id="progreso3"
+                     progress="0"
+                     maxWidth="Infinity"
+                     GridPane.rowIndex="2"
+                     GridPane.columnIndex="1"/>
+
+        <Label fx:id="avance3"
+               text="0 / 5"
+               GridPane.rowIndex="2"
+               GridPane.columnIndex="2"/>
+    </GridPane>
+
+    <HBox spacing="14" alignment="CENTER_LEFT">
+        <Button fx:id="iniciar"
+                text="Iniciar"
+                onAction="#iniciarSimulacion"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-padding: 9 22;"/>
+
+        <Button fx:id="cancelar"
+                text="Cancelar"
+                disable="true"
+                onAction="#cancelarSimulacion"
+                style="-fx-background-color: #b91c1c; -fx-text-fill: white; -fx-padding: 9 22;"/>
+
+        <Label text="Estado:"
+               style="-fx-font-weight: bold;"/>
+
+        <Label fx:id="estado" text="Listo"/>
+    </HBox>
+
+    <Label fx:id="trabajadores"
+           text="Trabajadores activos: 0"/>
+
+    <Label text="Ventas confirmadas"
+           style="-fx-font-weight: bold;"/>
+
+    <TextArea fx:id="registro"
+              editable="false"
+              wrapText="true"
+              prefRowCount="8"
+              VBox.vgrow="ALWAYS"/>
+
+    <Label text="Historial de simulaciones"
+           style="-fx-font-weight: bold;"/>
+
+    <TextArea fx:id="historial"
+              editable="false"
+              wrapText="true"
+              prefRowCount="4"/>
+
+</VBox>
