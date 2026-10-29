@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.desarrollo.caso2.controller.PedidoController"
+      spacing="18"
+      prefWidth="760"
+      prefHeight="520"
+      style="-fx-background-color: #f1f5f9; -fx-font-family: 'Segoe UI'; -fx-font-size: 14px;">
+
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <VBox spacing="6">
+        <Label text="Procesamiento de pedidos"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+        <Label text="30 pedidos · 200 ms por pedido"
+               style="-fx-text-fill: #64748b;"/>
+    </VBox>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label text="Estado:" style="-fx-font-weight: bold;"/>
+        <Label fx:id="estado" text="Listo"/>
+    </HBox>
+
+    <Label fx:id="contador"
+           text="Pedidos completados: 0 / 30"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <ProgressBar fx:id="progreso"
+                 progress="0"
+                 maxWidth="Infinity"
+                 prefHeight="22"/>
+
+    <Label fx:id="porcentaje" text="0 %"/>
+
+    <HBox spacing="12">
+        <Button fx:id="iniciar"
+                text="Iniciar"
+                onAction="#iniciarProcesamiento"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-padding: 10 24;"/>
+
+        <Button fx:id="cancelar"
+                text="Cancelar"
+                onAction="#cancelarProcesamiento"
+                disable="true"
+                style="-fx-background-color: #b91c1c; -fx-text-fill: white; -fx-padding: 10 24;"/>
+    </HBox>
+
+    <Label text="Registro de ejecuciones"
+           style="-fx-font-weight: bold;"/>
+
+    <TextArea fx:id="registro"
+              editable="false"
+              wrapText="true"
+              VBox.vgrow="ALWAYS"/>
+
+</VBox>
