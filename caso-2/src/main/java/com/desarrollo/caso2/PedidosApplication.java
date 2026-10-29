@@ -1,4 +1,5 @@
 package com.desarrollo.caso2;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -10,6 +11,6 @@ public class PedidosApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        
+
     }
 }
