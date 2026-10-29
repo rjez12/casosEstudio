@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.desarrollo.caso1.controller.ReservaController"
+      spacing="16"
+      prefWidth="920"
+      prefHeight="720"
+      style="-fx-background-color: #f1f5f9; -fx-font-family: 'Segoe UI'; -fx-font-size: 14px;">
+
+    <padding>
+        <Insets top="24" right="24" bottom="24" left="24"/>
+    </padding>
+
+    <VBox spacing="4">
+        <Label text="Reserva de entradas"
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+        <Label text="20 entradas · 3 agentes · 10 solicitudes por agente"
+               style="-fx-text-fill: #64748b;"/>
+    </VBox>
+
+    <HBox spacing="12">
+        <VBox spacing="6"
+              HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 10;">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <Label text="Disponibles" style="-fx-text-fill: #64748b;"/>
+            <Label fx:id="disponibles"
+                   text="20"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2563eb;"/>
+        </VBox>
+
+        <VBox spacing="6"
+              HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 10;">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <Label text="Confirmadas" style="-fx-text-fill: #64748b;"/>
+            <Label fx:id="confirmadas"
+                   text="0"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #15803d;"/>
+        </VBox>
+
+        <VBox spacing="6"
+              HBox.hgrow="ALWAYS"
+              style="-fx-background-color: white; -fx-background-radius: 10;">
+            <padding>
+                <Insets top="16" right="16" bottom="16" left="16"/>
+            </padding>
+            <Label text="Rechazadas" style="-fx-text-fill: #64748b;"/>
+            <Label fx:id="rechazadas"
+                   text="0"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #b91c1c;"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <Button fx:id="iniciar"
+                text="Iniciar simulación"
+                onAction="#iniciarSimulacion"
+                style="-fx-background-color: #2563eb; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-padding: 10 18;"/>
+        <Label fx:id="estado"
+               text="Listo para iniciar"
+               wrapText="true"
+               HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <HBox spacing="24">
+        <Label fx:id="agentes" text="Agentes creados: 0"/>
+        <Label fx:id="bloqueados" text="Inicios bloqueados: 0"/>
+    </HBox>
+
+    <VBox spacing="8" VBox.vgrow="ALWAYS">
+        <Label text="Solicitudes de la simulación"
+               style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="registro"
+                  editable="false"
+                  wrapText="true"
+                  prefRowCount="10"
+                  VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <VBox spacing="8">
+        <Label text="Historial de pruebas"
+               style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="historial"
+                  editable="false"
+                  wrapText="true"
+                  prefRowCount="5"/>
+    </VBox>
+
+</VBox>
